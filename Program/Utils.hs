@@ -18,5 +18,8 @@ lawMapStringState xs = [to| (Law a to) <- xs]
 getStartNodes :: [Node] -> [Node]
 getStartNodes xs = [(Node name laws start finish)| (Node name laws start finish) <- xs, start]
 
+getNotStartNodes :: [Node] -> [Node]
+getNotStartNodes xs = [(Node name laws start finish)| (Node name laws start finish) <- xs, (not start)]
+
 getNamesStartNodes :: [Node] -> [String]
 getNamesStartNodes xs = [name| (Node name laws start finish) <- (getStartNodes xs)]

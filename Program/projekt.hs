@@ -3,18 +3,19 @@ import ToNfa
 import ToDfa
 import RenameStates
 import Inverse
+import GetOneStartNode
 
 main :: IO ()
 main = do 
     {line <- readFile "../in/plik2.txt"; let 
         dividedData = divideString line; 
-        nfa = toNFA dividedData; 
-        tr = inverse nfa
-        trDfa = toDfa tr
-        renamedDfa = rename trDfa
-        inverseAgain = inverse renamedDfa
-        minimal = toDfa inverseAgain
-        in print minimal}
+        orginalNfa = toNFA dividedData; 
+        inversedNfa = inverse orginalNfa
+        inversedDfa = rename (toDfa inversedNfa)
+        backToOriginalNfa = inverse inversedDfa
+        minimalDfa = rename (toDfa backToOriginalNfa)
+        oneStartDfa = rename (getOneStartNode minimalDfa)
+        in print oneStartDfa}
 
 
 
