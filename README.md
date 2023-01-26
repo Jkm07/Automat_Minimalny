@@ -81,3 +81,4 @@ ghc -o program Main.hs
 - Nazwy stanów muszą być **pojedyńczymi znakami**
 - Dozwolone jest podanie kilku stanów startowych
 - W foldorze *in* podane są przykładowe dane testowe
+- Program zawsze nazywa ponownie wszystkie stany
