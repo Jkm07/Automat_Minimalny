@@ -1,7 +1,6 @@
 module Entities where
 
 data Law = Law String String
-
 instance Show Law where
     show (Law a b) = show (a, b) 
 instance Eq Law where
@@ -17,12 +16,10 @@ data Node = Node String [Law] Bool Bool
 instance Eq Node where
     (==) (Node a _ _ _) (Node b _ _ _) = a == b
     (/=) a b = not (a == b)
-
 instance Show Node where
     show (Node a b c d) = show (a, b, c, d)
 
 data NFA = NFA [Node] [String]
-
 instance Show NFA where
     show (NFA a b) = show (a, b)
 

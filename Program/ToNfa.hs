@@ -4,8 +4,7 @@ import LawsController
 
 addNodes :: NFA -> [String] -> NFA
 addNodes nfa [] = nfa
-addNodes nfa (w:words) = NFA ((Node w [] False False):nodes) alfa
-    where (NFA nodes alfa) = addNodes nfa words
+addNodes (NFA nodes alfa) words = NFA (nodes ++ [(Node word [] False False)| word <- words]) alfa
 
 insertAlpha :: NFA -> [String] -> NFA
 insertAlpha (NFA nodes _) words = NFA nodes words

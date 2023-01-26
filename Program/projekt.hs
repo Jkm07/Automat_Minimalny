@@ -6,7 +6,7 @@ import Inverse
 
 main :: IO ()
 main = do 
-    {line <- readFile "plik2.txt"; let 
+    {line <- readFile "../in/plik2.txt"; let 
         dividedData = divideString line; 
         nfa = toNFA dividedData; 
         tr = inverse nfa
