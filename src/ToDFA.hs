@@ -1,4 +1,4 @@
-module ToDfa where
+module ToDFA where
 import Entities
 import Utils
 import Data.List

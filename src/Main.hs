@@ -1,6 +1,6 @@
 import Entities
-import ToNfa
-import ToDfa
+import ToNFA
+import ToDFA
 import RenameStates
 import Inverse
 import GetOneStartNode

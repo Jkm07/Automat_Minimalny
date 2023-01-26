@@ -2,7 +2,6 @@ module SaveToFile where
 import Entities
 import Utils
 
-
 addNodeToString :: Node -> String -> String
 addNodeToString (Node name _ _ _) str = ' ':name ++ str
 

@@ -1,4 +1,4 @@
-module ToNfa where
+module ToNFA where
 import Entities
 import LawsController
 
