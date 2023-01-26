@@ -21,5 +21,8 @@ getStartNodes xs = [(Node name laws start finish)| (Node name laws start finish)
 getNotStartNodes :: [Node] -> [Node]
 getNotStartNodes xs = [(Node name laws start finish)| (Node name laws start finish) <- xs, (not start)]
 
+getFinishNodes :: [Node] -> [Node]
+getFinishNodes xs = [(Node name laws start finish)| (Node name laws start finish) <- xs, finish]
+
 getNamesStartNodes :: [Node] -> [String]
 getNamesStartNodes xs = [name| (Node name laws start finish) <- (getStartNodes xs)]
